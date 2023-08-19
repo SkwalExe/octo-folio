@@ -1,0 +1,31 @@
+{
+    "name": "skwal-projects",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "format": "prettier . --write",
+        "lint": "eslint ./ --fix",
+        "update-repos-cache": "node scripts/update-repos-cache.js",
+        "serve": "node server/server.js"
+    },
+    "dependencies": {
+        "@vueuse/components": "^10.3.0",
+        "@vueuse/core": "^10.3.0",
+        "axios": "^1.4.0",
+        "dotenv": "^16.3.1",
+        "open-graph-scraper": "^6.2.2",
+        "vue": "^3.3.4",
+        "vue-router": "^4.2.4"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^4.2.3",
+        "eslint": "^8.47.0",
+        "eslint-plugin-vue": "^9.17.0",
+        "express": "^4.18.2",
+        "prettier": "3.0.2",
+        "vite": "^4.4.6"
+    }
+}

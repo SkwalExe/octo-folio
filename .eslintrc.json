@@ -1,0 +1,22 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": ["eslint:recommended", "plugin:vue/vue3-essential"],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "plugins": ["vue"],
+    "rules": {
+        "indent": ["off"],
+        "linebreak-style": ["error", "unix"],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"],
+        "vue/script-indent": ["error", 4, { "baseIndent": 1 }],
+        "vue/multi-word-component-names": ["off"]
+    },
+    "ignorePatterns": ["dist/*"]
+}
