@@ -1,0 +1,7 @@
+The exclude.json file contains a list of the repos I don't want to show on the main page
+
+The repos-cache.json contains a list of all my repos, with the name, the preview image, the description, the stars and the url.
+It is updated by the backend server. It should not be updated, I tried to add it to the .gitignore 
+but it can't work since I already commited the file... I will try to find a solution later.
+For now you can use :
+$ git update-index --assume-unchanged data/repos-cache.json
