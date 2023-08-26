@@ -25,7 +25,7 @@
             class="mouse-aura"
             :style="{
                 top: toFixed(y) - height / 2 + 'px',
-                left: toFixed(x) - width / 2 + 'px',
+                left: x - width / 2 + 'px',
                 height: height + 'px',
                 width: width + 'px'
             }"

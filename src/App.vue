@@ -3,6 +3,7 @@
     import RepoTile from "@/components/RepoTile.vue";
     import Navbar from "@/components/Navbar.vue";
     import MouseAura from "@/components/MouseAura.vue";
+    import settings from "@/../data/settings.js";
 
     import { ref } from "vue";
 
@@ -14,11 +15,14 @@
 </script>
 
 <template>
-    <MouseAura />
+    <MouseAura v-if="settings.mouse_aura" />
 
     <Navbar @filter="filter" />
     <main>
-        <div class="tile-list">
+        <div
+            class="tile-list"
+            :style="{ gap: settings.gap_size }"
+        >
             <RepoTile
                 v-show="
                     repo.name.toLowerCase().includes(filter_by) ||
@@ -42,7 +46,6 @@
 
     .tile-list {
         display: grid;
-        gap: 20px;
         grid-template-columns: repeat(
             auto-fit,
             minmax(100px, min(100%, 400px))
