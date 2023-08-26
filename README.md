@@ -30,7 +30,15 @@ nano data/settings.js
 npm run fetch-repos
 ```
 
-#### Step 5 - run the project.
+#### Step 5 - Build the frontend.
+
+```bash
+npm run build
+```
+
+#### Step 6 - serve the project.
+
+You can also serve the project with a web server like nginx or apache.
 
 ```bash
 npm run serve
