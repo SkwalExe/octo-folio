@@ -3,21 +3,33 @@
     import ForkBadge from "./ForkBadge.vue";
     import GithubLinkBadge from "./GithubLinkBadge.vue";
     import StarsBadge from "./StarsBadge.vue";
+    import settings from "@/../data/settings.js";
 </script>
 
 <template>
     <div class="repo-tile">
-        <div class="image-container">
+        <div
+            v-if="settings.show_banner"
+            class="image-container"
+        >
             <img
                 :src="repo.image"
-                alt="Project Banner"
+                :alt="
+                    repo.image
+                        ? 'Project Banner'
+                        : 'Image is null, please update the repos-cache.json file by running npm run fetch-repos'
+                "
             />
         </div>
         <div class="text">
             <p class="title">{{ repo.name }}</p>
             <p class="description">{{ repo.description }}</p>
             <div class="badges">
-                <StarsBadge :stars="repo.stars" />
+                <StarsBadge
+                    v-if="settings.show_stars"
+                    StarsBadge
+                    :stars="repo.stars"
+                />
                 <GithubLinkBadge :url="repo.url" />
                 <ForkBadge v-if="repo.fork" />
             </div>

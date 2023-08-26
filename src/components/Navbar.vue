@@ -1,6 +1,7 @@
 <script setup>
     import SearchBox from "@/components/SearchBox.vue";
     import { onMounted, ref } from "vue";
+    import settings from "@/../data/settings.js";
     const emit = defineEmits("filter");
 
     const filter = text => emit("filter", text);
@@ -21,7 +22,7 @@
     <div :class="{ 'nav-container': true, 'transparent': transparent }">
         <nav>
             <div class="left">
-                <p class="title">My Projects</p>
+                <p class="title">{{ settings.title }}</p>
             </div>
 
             <div class="right">
@@ -37,7 +38,7 @@
         display: flex;
         justify-content: center;
         position: fixed;
-        padding: 0 25px;
+        padding: 10px 25px;
         top: 0;
         left: 0s;
         z-index: 10;
@@ -56,6 +57,8 @@
         user-select: none;
         display: inline;
         color: var(--accent-color);
+        font-size: 25px;
+        font-weight: bold;
     }
 
     nav {

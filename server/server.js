@@ -1,17 +1,20 @@
 // Very simple production Vue.js server
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const BASE_PATH = path.resolve(`${__dirname}/..`);
 
-require("dotenv").config();
-
-const express = require("express");
-const path = require("path");
-const PORT = process.env.PORT || 8008;
+import express from "express";
+import settings from "../data/settings.js";
+const PORT = settings.port;
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, "..", "dist")));
+app.use(express.static(path.join(BASE_PATH, "dist")));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
+    res.sendFile(path.join(BASE_PATH, "dist", "index.html"));
 });
 
 app.listen(PORT, () => {
