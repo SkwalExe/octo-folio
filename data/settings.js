@@ -20,7 +20,21 @@ const settings = {
     // Whether or not to show to show the mouse aura effect
     mouse_aura: true,
     // Whether or not to show the forked repos
-    show_forks: false
+    show_forks: false,
+
+    custom_badges: {
+        // Name of a repo
+        "my_repo": [
+            {
+                // Available custom badge properties
+                text: "Custom Badge",
+                link: "https://skwal.net",
+                icon: "fa-medal",
+                bg_color: "tomato",
+                text_color: "white",                
+            }
+        ]
+    },
 };
 
 export default settings;
