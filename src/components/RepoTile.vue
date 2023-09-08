@@ -4,6 +4,8 @@
     import GithubLinkBadge from "./GithubLinkBadge.vue";
     import StarsBadge from "./StarsBadge.vue";
     import settings from "@/../data/settings.js";
+    import Badge from "./Badge.vue";
+    
 </script>
 
 <template>
@@ -32,6 +34,7 @@
                 />
                 <GithubLinkBadge :url="repo.url" />
                 <ForkBadge v-if="repo.fork" />
+                <Badge v-for="badge in (settings.custom_badges[repo.name] || [])" :text="badge.text" :icon="badge.icon" :link="badge.link" :text_color="badge.text_color" :bg_color="badge.bg_color" />
             </div>
         </div>
     </div>
@@ -41,7 +44,7 @@
     .badges {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 10px;
         justify-self: flex-end;
     }
 
